@@ -36,7 +36,7 @@ import os
 import sys
 import inspect
 import argparse
-from colorama import Fore, Style
+from colorama import Fore, Style, just_fix_windows_console
 
 this_script_path = os.path.abspath(sys.argv[0])
 sys.path.insert(0, os.path.join(os.path.dirname(this_script_path), 'FrameworkInternals'))
@@ -59,6 +59,7 @@ def __make_context(project_binary_dir):
     return context
 
 def main():
+    just_fix_windows_console()
     quasar_basic_utils.initialize_logging()
 
     parser = quasar_parser()
