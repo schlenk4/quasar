@@ -32,6 +32,7 @@ commandMap = {
 "graphviz":"dot",
 "doxygen":"doxygen",
 "git":"git",
+"xsdcxx":"xsdcxx",
 "indent":"indent"
 }
 

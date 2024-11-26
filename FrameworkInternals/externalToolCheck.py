@@ -62,6 +62,9 @@ def checkExecutableExists(executableKeyName, doesNotExistErrorMessage, executabl
 def checkAstyle():
     checkExecutableExists('astyle', StandardMessage)
 
+def checkXsdcxx():
+    checkExecutableExists('xsdcxx', StandardMessage, "--version" )
+
 def checkKdiff3():
     if platform.system() == "Linux":
         return checkExecutableExists('diff', StandardMessage, '--version')
@@ -113,6 +116,7 @@ def checkExternalDependencies():
     tryDependency(checkCompiler)
     tryDependency(checkXMLLint)
     tryDependency(checkAstyle)
+    tryDependency(checkXsdcxx)
     tryDependency(checkGraphViz, False)
     tryDependency(checkDoxyGen, False)
 
